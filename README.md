@@ -3,11 +3,11 @@
 # asdf-modeler [![Build](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml/badge.svg)](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml) [![Lint](https://github.com/barmac/asdf-modeler/actions/workflows/lint.yml/badge.svg)](https://github.com/barmac/asdf-modeler/actions/workflows/lint.yml)
 
 
-[Camunda Modeler](https://github.com/camunda/camunda-modeler/tree/develop/docs) plugin for the [asdf version manager](https://asdf-vm.com).
+[Camunda Modeler](https://github.com/camunda/camunda-modeler) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
-# Contents
+## Contents
 
 - [Dependencies](#dependencies)
 - [Install](#install)
@@ -15,12 +15,11 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-# Dependencies
+## Dependencies
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
 
-# Install
+## Install
 
 Plugin:
 
@@ -49,12 +48,12 @@ asdf modeler diagram.bpmn
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
 
-# Contributing
+## Contributing
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
 [Thanks goes to these contributors](https://github.com/barmac/asdf-modeler/graphs/contributors)!
 
-# License
+## License
 
 See [LICENSE](LICENSE) © [Maciej Barelkowski](https://github.com/barmac/)
