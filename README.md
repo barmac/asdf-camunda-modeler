@@ -43,7 +43,7 @@ asdf install modeler latest
 asdf global modeler latest
 
 # Now modeler commands are available
-which modeler
+asdf modeler diagram.bpmn
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to

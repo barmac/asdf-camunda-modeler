@@ -6,7 +6,7 @@ Testing Locally:
 asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--asdf-plugin-gitref <git-ref>] [test-command*]
 
 #
-asdf plugin test modeler https://github.com/barmac/asdf-modeler.git "which modeler"
+asdf plugin test modeler https://github.com/barmac/asdf-modeler.git
 ```
 
 Tests are automatically run in GitHub Actions on push and PR.
