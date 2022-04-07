@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-modeler [![Build](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml/badge.svg)](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml) [![Lint](https://github.com/barmac/asdf-modeler/actions/workflows/lint.yml/badge.svg)](https://github.com/barmac/asdf-modeler/actions/workflows/lint.yml)
+# asdf-modeler [![Build](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml/badge.svg)](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml)
 
 
 [Camunda Modeler](https://github.com/camunda/camunda-modeler) plugin for the [asdf version manager](https://asdf-vm.com).
