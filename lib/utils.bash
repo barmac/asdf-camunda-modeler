@@ -66,7 +66,7 @@ executable() {
 
 }
 
-curl_opts=(-fsSL)
+curl_opts=(-f#SL)
 
 # NOTE: You might want to remove this if modeler is not hosted on GitHub releases.
 if [ -n "${GITHUB_API_TOKEN:-}" ]; then
