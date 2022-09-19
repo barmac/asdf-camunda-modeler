@@ -7,6 +7,8 @@ GH_REPO="https://github.com/camunda/camunda-modeler"
 TOOL_NAME="modeler"
 TOOL_TEST=""
 
+NIGHTLY_LOCATION="https://downloads.camunda.cloud/release/camunda-modeler/nightly"
+
 fail() {
   echo -e "asdf-$TOOL_NAME: $*"
   exit 1
@@ -73,11 +75,6 @@ if [ -n "${GITHUB_API_TOKEN:-}" ]; then
   curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
 fi
 
-sort_versions() {
-  sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
-    LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n -k 4,4n -k 5,5n | awk '{print $2}'
-}
-
 list_github_tags() {
   git ls-remote --tags --refs "$GH_REPO" |
     grep -o 'refs/tags/.*' | cut -d/ -f3- |
@@ -87,18 +84,34 @@ list_github_tags() {
 list_all_versions() {
   # TODO: Adapt this. By default we simply list the tag names from GitHub releases.
   # Change this function if modeler has other means of determining installable versions.
-  list_github_tags
+  echo $(list_github_tags) nightly
+}
+
+get_download_url() {
+  local version artifact_name url
+  version="$1"
+  artifact_name="$(file_name $version)"
+
+  case "$version" in
+  nightly)
+    url="$NIGHTLY_LOCATION/$artifact_name"
+    ;;
+  *)
+    url="$GH_REPO/releases/download/v$version/$artifact_name"
+    ;;
+  esac
+
+  echo $url
 }
 
 download_release() {
   local version filename url artifact_name
   version="$1"
   filename="$2"
-  artifact_name="$(file_name $version)"
 
-  url="$GH_REPO/releases/download/v${version}/$artifact_name"
+  url=$(get_download_url $version)
 
-  echo "* Downloading $TOOL_NAME release $version..."
+  echo "* Downloading $TOOL_NAME $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
