@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/barmac/asdf-modeler/compare/v1.0.0...v2.0.0) (2022-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename plugin to `asdf-camunda-modeler`
+
+### Bug Fixes
+
+* rename plugin to `asdf-camunda-modeler` ([3a1d620](https://www.github.com/barmac/asdf-modeler/commit/3a1d62096a54cc4afad7eaea6941b2cc065a8896))
+
 ## 1.0.0 (2022-09-19)
 
 
