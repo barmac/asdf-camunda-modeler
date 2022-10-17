@@ -45,4 +45,4 @@ jobs:
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1
         with:
-          command: "asdf where modeler"
+          command: "asdf where camunda-modeler"
