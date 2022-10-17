@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-modeler [![Build](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml/badge.svg)](https://github.com/barmac/asdf-modeler/actions/workflows/build.yml)
+# asdf-camunda-modeler [![Build](https://github.com/barmac/asdf-camunda-modeler/actions/workflows/build.yml/badge.svg)](https://github.com/barmac/asdf-camunda-modeler/actions/workflows/build.yml)
 
 
 [Camunda Modeler](https://github.com/camunda/camunda-modeler) plugin for the [asdf version manager](https://asdf-vm.com).
@@ -24,25 +24,28 @@
 Plugin:
 
 ```shell
-asdf plugin add modeler
+asdf plugin add camunda-modeler
 # or
-asdf plugin add modeler https://github.com/barmac/asdf-modeler.git
+asdf plugin add camunda-modeler https://github.com/barmac/asdf-camunda-modeler.git
 ```
 
-modeler:
+## Usage
 
 ```shell
 # Show all installable versions
-asdf list-all modeler
+asdf list-all camunda-modeler
 
 # Install specific version
-asdf install modeler latest
+asdf install camunda-modeler latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global modeler latest
+asdf global camunda-modeler latest
 
 # Now modeler commands are available
-asdf modeler diagram.bpmn
+asdf camunda-modeler diagram.bpmn
+
+# Download and run current nightly
+asdf camunda-modeler nightly
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
@@ -52,7 +55,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/barmac/asdf-modeler/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/barmac/asdf-camunda-modeler/graphs/contributors)!
 
 ## License
 

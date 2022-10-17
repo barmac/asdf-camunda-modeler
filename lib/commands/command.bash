@@ -8,4 +8,4 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 # shellcheck source=../lib/utils.bash
 source "${plugin_dir}/utils.bash"
 
-$(asdf where modeler)/"$(executable)" "$*"
+$(asdf where camunda-modeler)/"$(executable)" "$*"

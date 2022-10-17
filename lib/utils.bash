@@ -82,8 +82,7 @@ list_github_tags() {
 }
 
 list_all_versions() {
-  # TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-  # Change this function if modeler has other means of determining installable versions.
+  # List the tag names from GitHub releases.
   echo $(list_github_tags) nightly
 }
 

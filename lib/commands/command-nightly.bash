@@ -9,16 +9,16 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 source "${plugin_dir}/utils.bash"
 
 uninstall() {
-  asdf uninstall modeler nightly
+  asdf uninstall camunda-modeler nightly
 }
 
 install() {
-  asdf install modeler nightly
+  asdf install camunda-modeler nightly
 }
 
 get_installation() {
   local installation
-  installation="$(asdf where modeler nightly)"
+  installation="$(asdf where camunda-modeler nightly)"
 
   if [ $? == 0 ]; then
     echo $installation
@@ -38,4 +38,4 @@ elif [ $(expr $(date +%s) - $(date -r $installation +%s)) -gt 86400 ]; then
   install
 fi
 
-ASDF_MODELER_VERSION=nightly asdf modeler "$*"
+ASDF_MODELER_VERSION=nightly asdf camunda-modeler "$*"
