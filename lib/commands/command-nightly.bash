@@ -21,7 +21,7 @@ get_installation() {
   installation="$(asdf where camunda-modeler nightly)"
 
   if [ $? == 0 ]; then
-    echo $installation
+    echo "$installation/$(executable)"
   else
     echo "failed"
   fi
