@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.0...v2.0.1) (2022-10-18)
+
+
+### Bug Fixes
+
+* check nightly age on executable ([39adff6](https://www.github.com/barmac/asdf-camunda-modeler/commit/39adff609cfb348f94b627ed0d194c4a5503ca38))
+* rename plugin also in the nightly command ([2f18ce4](https://www.github.com/barmac/asdf-camunda-modeler/commit/2f18ce4373e33c51798c741089defee090e08519))
+
 ## [2.0.0](https://www.github.com/barmac/asdf-modeler/compare/v1.0.0...v2.0.0) (2022-10-17)
 
 
