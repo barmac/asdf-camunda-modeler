@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.2](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.1...v2.0.2) (2022-10-18)
+
+
+### Bug Fixes
+
+* make nightly command work on MacOS again ([59f3e76](https://www.github.com/barmac/asdf-camunda-modeler/commit/59f3e76d9bc7913bbdf313ea2f9a9e2c1d94a848))
+
 ### [2.0.1](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.0...v2.0.1) (2022-10-18)
 
 
