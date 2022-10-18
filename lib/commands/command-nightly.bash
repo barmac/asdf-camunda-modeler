@@ -27,12 +27,12 @@ get_installation() {
   fi
 }
 
-installation=$(get_installation)
+installation="$(get_installation)"
 
-if [ $installation == "failed" ]; then
+if [ "$installation" == "failed" ]; then
   echo "* No nightly installation found; installing..."
   install
-elif [ $(expr $(date +%s) - $(date -r $installation +%s)) -gt 86400 ]; then
+elif [ $(expr $(date +%s) - $(date -r "$installation" +%s)) -gt 86400 ]; then
   echo "* Outdated nightly found; reinstalling..."
   uninstall
   install
