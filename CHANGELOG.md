@@ -5,11 +5,14 @@
 
 ### ⚠ BREAKING CHANGES
 
-* rename plugin to `asdf-camunda-modeler`
-
-### Bug Fixes
-
 * rename plugin to `asdf-camunda-modeler` ([3a1d620](https://www.github.com/barmac/asdf-modeler/commit/3a1d62096a54cc4afad7eaea6941b2cc065a8896))
+
+To upgrade, reinstall the plugin via:
+
+```bash
+asdf plugin remove modeler
+asdf plugin add camunda-modeler https://github.com/barmac/asdf-camunda-modeler.git
+```
 
 ## 1.0.0 (2022-09-19)
 
