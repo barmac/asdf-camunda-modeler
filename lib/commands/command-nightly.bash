@@ -38,4 +38,4 @@ elif [ $(expr $(date +%s) - $(date -r $installation +%s)) -gt 86400 ]; then
   install
 fi
 
-ASDF_MODELER_VERSION=nightly asdf camunda-modeler "$*"
+ASDF_CAMUNDA_MODELER_VERSION=nightly asdf camunda-modeler "$*"
