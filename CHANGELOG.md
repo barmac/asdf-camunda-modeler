@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.3](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.2...v2.0.3) (2023-06-13)
+
+
+### Bug Fixes
+
+* sort versions semantically ([d9ad4c8](https://www.github.com/barmac/asdf-camunda-modeler/commit/d9ad4c86f7a6ca7c83699fcc00d879152886574f)), closes [#8](https://www.github.com/barmac/asdf-camunda-modeler/issues/8)
+
 ### [2.0.2](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.1...v2.0.2) (2022-10-18)
 
 
