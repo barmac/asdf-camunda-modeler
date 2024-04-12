@@ -2,12 +2,14 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for modeler.
 GH_REPO="https://github.com/camunda/camunda-modeler"
 TOOL_NAME="modeler"
 TOOL_TEST=""
 
 NIGHTLY_LOCATION="https://downloads.camunda.cloud/release/camunda-modeler/nightly"
+
+# after this version links use architecture in name
+MACOS_OLD_ARCH_VERSION="5.22.0"
 
 fail() {
   echo -e "asdf-$TOOL_NAME: $*"
@@ -40,7 +42,7 @@ file_name() {
 
   case "$platform_name" in
   mac)
-    echo "camunda-modeler-$version-mac.zip"
+    echo $(mac_file_name $version)
     ;;
   linux)
     echo "camunda-modeler-$version-linux-x64.tar.gz"
@@ -49,6 +51,41 @@ file_name() {
     fail "Unknown platform: $platform_name"
     ;;
   esac
+}
+
+mac_file_name() {
+  local version="$1"
+
+  # handle pre-arm links
+  if [[ "$version" != "nightly" && $(semver_compare "$version" "$MACOS_OLD_ARCH_VERSION") != "gt" ]]; then
+    echo "camunda-modeler-$version-mac.zip"
+    return
+  fi
+
+  case "$(arch)" in
+  arm64)
+    echo "camunda-modeler-$version-mac-arm64.zip"
+    ;;
+  *)
+    echo "camunda-modeler-$version-mac-x64.zip"
+    ;;
+  esac
+}
+
+semver_compare() {
+  local IFS=.
+  local i version1=($1) version2=($2)
+
+  for ((i=1; i<=${#version1[@]}; i++)); do
+    if (( ${version1[i]} < ${version2[i]} )); then
+      echo "lt"
+      return
+    elif (( ${version1[i]} > ${version2[i]} )); then
+      echo "gt"
+      return
+    fi
+  done
+  echo "eq"
 }
 
 executable() {
