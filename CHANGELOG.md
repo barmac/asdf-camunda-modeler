@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.3...v2.1.0) (2024-04-12)
+
+
+### Features
+
+* support both x64 and arm64 for MacOS ([0359d15](https://www.github.com/barmac/asdf-camunda-modeler/commit/0359d15915dd0c02b5ee2d96bb9cc9e4a65c2af2)), closes [#10](https://www.github.com/barmac/asdf-camunda-modeler/issues/10)
+
 ### [2.0.3](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.2...v2.0.3) (2023-06-13)
 
 
