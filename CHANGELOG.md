@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.1.0...v2.1.1) (2025-04-29)
+
+
+### Bug Fixes
+
+* install application correctly ([a8a3291](https://www.github.com/barmac/asdf-camunda-modeler/commit/a8a32915c56646f75a101e685e0fd58370f77033))
+
 ## [2.1.0](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.0.3...v2.1.0) (2024-04-12)
 
 
