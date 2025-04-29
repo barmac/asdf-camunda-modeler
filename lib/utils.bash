@@ -163,8 +163,8 @@ install_version() {
   fi
 
   (
-    mkdir -p "$install_path"
-    cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
+    rm -r "$install_path"
+    mv "$ASDF_DOWNLOAD_PATH" "$install_path" || fail "Failed to copy from $ASDF_DOWNLOAD_PATH to $install_path."
 
     test -x "$install_path/$executable_path" || fail "Expected $install_path/$executable_path to be executable."
 
