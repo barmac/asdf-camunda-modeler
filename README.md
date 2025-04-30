@@ -33,19 +33,19 @@ asdf plugin add camunda-modeler https://github.com/barmac/asdf-camunda-modeler.g
 
 ```shell
 # Show all installable versions
-asdf list-all camunda-modeler
+asdf list all camunda-modeler
 
 # Install specific version
 asdf install camunda-modeler latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global camunda-modeler latest
+asdf set -u camunda-modeler latest
 
 # Now modeler commands are available
-asdf camunda-modeler diagram.bpmn
+asdf cmd camunda-modeler diagram.bpmn
 
 # Download and run current nightly
-asdf camunda-modeler nightly
+asdf cmd camunda-modeler nightly
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
