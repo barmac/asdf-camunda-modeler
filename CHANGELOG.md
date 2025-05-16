@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.2.0...v2.2.1) (2025-05-16)
+
+
+### Bug Fixes
+
+* make nightly work in `asdf@0.16` ([4c01511](https://www.github.com/barmac/asdf-camunda-modeler/commit/4c01511524995a999b44096dd62b7d3504185a10))
+
 ## [2.2.0](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.1.1...v2.2.0) (2025-04-30)
 
 
