@@ -29,6 +29,10 @@ asdf plugin add camunda-modeler
 asdf plugin add camunda-modeler https://github.com/barmac/asdf-camunda-modeler.git
 ```
 
+## Why
+
+Because installing and running Camunda Modeler should be easy.
+
 ## Usage
 
 ```shell
