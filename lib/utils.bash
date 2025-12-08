@@ -113,10 +113,10 @@ if [ -n "${GITHUB_API_TOKEN:-}" ]; then
 fi
 
 list_github_tags() {
-  git ls-remote --tags --refs "$GH_REPO" |
-    grep -o 'refs/tags/.*' | cut -d/ -f3- |
-    sort -V |    # Sort versions
-    sed 's/^v//' # NOTE: You might want to adapt this sed to remove non-version strings from tags
+  curl -sL "https://api.github.com/repos/camunda/camunda-modeler/releases?per_page=100" |
+    grep '"tag_name":' |
+    sed -E 's/.*"tag_name": "v?([^"]+)".*/\1/' |
+    sort -V
 }
 
 list_all_versions() {
