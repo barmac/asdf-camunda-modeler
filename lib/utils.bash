@@ -113,7 +113,7 @@ if [ -n "${GITHUB_API_TOKEN:-}" ]; then
 fi
 
 list_github_tags() {
-  curl -sL --compressed "https://api.github.com/repos/camunda/camunda-modeler/releases?per_page=100" |
+  curl "${curl_opts[@]}" -s --compressed "https://api.github.com/repos/camunda/camunda-modeler/releases?per_page=100" |
     grep '"tag_name":' |
     sed -E 's/.*"tag_name": "v?([^"]+)".*/\1/' |
     sort -V
