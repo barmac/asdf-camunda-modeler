@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.2.3...v2.3.0) (2026-11-14)
+
+
+### Features
+
+* support Windows ([b8b55ac](https://www.github.com/barmac/asdf-camunda-modeler/commit/b8b55acf2a8870ee9b7e18d1b166e838f182f87c)), closes [#4](https://www.github.com/barmac/asdf-camunda-modeler/issues/4)
+
 ### [2.2.3](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.2.2...v2.2.3) (2026-11-14)
 
 
