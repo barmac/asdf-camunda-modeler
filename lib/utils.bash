@@ -113,7 +113,8 @@ if [ -n "${GITHUB_API_TOKEN:-}" ]; then
 fi
 
 list_github_tags() {
-  curl -sL "https://api.github.com/repos/camunda/camunda-modeler/releases?per_page=100" |
+  # --compressed: the releases JSON is large, gzip cuts the transfer by ~90%
+  curl -sL --compressed "https://api.github.com/repos/camunda/camunda-modeler/releases?per_page=100" |
     grep '"tag_name":' |
     sed -E 's/.*"tag_name": "v?([^"]+)".*/\1/' |
     sort -V
@@ -150,6 +151,34 @@ download_release() {
 
   echo "* Downloading $TOOL_NAME $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
+}
+
+download_and_extract() {
+  local version download_path url release_file
+  version="$1"
+  download_path="$2"
+
+  case "$(platform)" in
+  linux)
+    # Stream the tarball straight into tar, so extraction overlaps the download
+    # and the archive never touches the disk.
+    url=$(get_download_url "$version")
+
+    echo "* Downloading $TOOL_NAME $version..."
+    curl "${curl_opts[@]}" "$url" |
+      tar -xzf - -C "$download_path" --strip-components=1 ||
+      fail "Could not download and extract $url"
+    ;;
+  *)
+    # Zip archives keep their index (incl. symlink info used by the .app bundle)
+    # at the end of the file, so they cannot be safely extracted from a stream.
+    release_file="$download_path/$TOOL_NAME-$version.zip"
+
+    download_release "$version" "$release_file"
+    tar -xzf "$release_file" -C "$download_path" --strip-components=1 || fail "Could not extract $release_file"
+    rm "$release_file"
+    ;;
+  esac
 }
 
 install_version() {
