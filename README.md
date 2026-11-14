@@ -10,6 +10,7 @@
 ## Contents
 
 - [Dependencies](#dependencies)
+- [Supported platforms](#supported-platforms)
 - [Install](#install)
 - [Why?](#why)
 - [Contributing](#contributing)
@@ -18,6 +19,13 @@
 ## Dependencies
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
+- Windows only: `unzip` (falls back to PowerShell's `Expand-Archive` if `unzip` is not available).
+
+## Supported platforms
+
+- macOS (x64, arm64)
+- Linux (x64)
+- Windows (x64) via a Bash environment such as Git Bash, MSYS2 or Cygwin. On WSL the Linux build is installed.
 
 ## Install
 

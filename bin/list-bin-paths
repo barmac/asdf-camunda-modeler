@@ -14,7 +14,7 @@ case "$platform_name" in
 mac)
   echo "Contents/MacOS"
   ;;
-linux)
+linux | windows)
   echo ""
   ;;
 *)
