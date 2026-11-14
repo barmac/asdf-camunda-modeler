@@ -28,6 +28,9 @@ platform() {
   Linux)
     platform="linux"
     ;;
+  MINGW* | MSYS* | CYGWIN*)
+    platform="windows"
+    ;;
   *)
     fail "Unknown OS: $os"
     ;;
@@ -46,6 +49,9 @@ file_name() {
     ;;
   linux)
     echo "camunda-modeler-$version-linux-x64.tar.gz"
+    ;;
+  windows)
+    echo "camunda-modeler-$version-win-x64.zip"
     ;;
   *)
     fail "Unknown platform: $platform_name"
@@ -97,6 +103,9 @@ executable() {
     ;;
   linux)
     echo "camunda-modeler"
+    ;;
+  windows)
+    echo "Camunda Modeler.exe"
     ;;
   *)
     fail "Unknown platform: $platform_name"
@@ -166,6 +175,13 @@ download_and_extract() {
       tar -xzf - -C "$download_path" --strip-components=1 ||
       fail "Could not download and extract $url"
     ;;
+  windows)
+    release_file="$download_path/$TOOL_NAME-$version.zip"
+
+    download_release "$version" "$release_file"
+    extract_windows_zip "$release_file" "$download_path" || fail "Could not extract $release_file"
+    rm "$release_file"
+    ;;
   *)
     # zip cannot be safely extracted from a stream
     release_file="$download_path/$TOOL_NAME-$version.zip"
@@ -175,6 +191,32 @@ download_and_extract() {
     rm "$release_file"
     ;;
   esac
+}
+
+extract_windows_zip() {
+  local archive="$1"
+  local destination="$2"
+
+  # Windows archive has no top-level directory, extract as is
+  if command -v unzip >/dev/null 2>&1; then
+    unzip -q -o "$archive" -d "$destination"
+  elif command -v powershell.exe >/dev/null 2>&1; then
+    powershell.exe -NoProfile -NonInteractive -Command \
+      "Expand-Archive -Force -LiteralPath '$(windows_path "$archive")' -DestinationPath '$(windows_path "$destination")'"
+  else
+    fail "Either unzip or powershell.exe is required to extract $archive"
+  fi
+
+  # zip carries no POSIX permissions; make sure the executable is marked as such
+  chmod +x "$destination/$(executable)"
+}
+
+windows_path() {
+  if command -v cygpath >/dev/null 2>&1; then
+    cygpath -w "$1"
+  else
+    echo "$1"
+  fi
 }
 
 install_version() {
