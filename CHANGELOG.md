@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.2.3](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.2.2...v2.2.3) (2026-11-14)
+
+
+### Bug Fixes
+
+* authenticate GitHub releases listing ([0434223](https://www.github.com/barmac/asdf-camunda-modeler/commit/0434223c220b345cdd41b21e5c17410a16988817))
+
+
+### Performance Improvements
+
+* stream linux download into tar and compress release listing ([ff87614](https://www.github.com/barmac/asdf-camunda-modeler/commit/ff876146d2479d059bedd0ad711fe63a65101a06))
+
 ### [2.2.2](https://www.github.com/barmac/asdf-camunda-modeler/compare/v2.2.1...v2.2.2) (2025-12-08)
 
 
